@@ -9,3 +9,5 @@
 *.DS_Store
 .idea/
 services.yml
+inamhi-geoglows-key.cer
+connect.bat
