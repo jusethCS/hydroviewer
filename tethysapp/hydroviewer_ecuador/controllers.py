@@ -15,14 +15,15 @@ from tethys_sdk.routing import controller
 #DB_USER = app.get_custom_setting('DB_USER')
 #DB_PASS = app.get_custom_setting('DB_PASS')
 #DB_NAME = app.get_custom_setting('DB_NAME')
-APP_NAME = "hydroviewer_ecuador"
+
 #APP_URL = APP_NAME.replace("_", "-")
 
 # Generate the conection token
 #tokencon = "postgresql+psycopg2://{0}:{1}@localhost:5432/{2}".format(DB_USER, DB_PASS, DB_NAME)
 
 
-
+APP_NAME = "hydroviewer_ecuador"
+SERVER = "https://inamhi.geoglows.org/"
 
 ####################################################################################################
 ##                                   CONTROLLERS AND REST APIs                                    ##
@@ -30,7 +31,7 @@ APP_NAME = "hydroviewer_ecuador"
 @controller #(name='home', url=APP_URL)
 def home(request):
     context = {
-        "server": app.get_custom_setting('SERVER'),
+        "server": SERVER,
         "app_name": APP_NAME
     }
     return render(request, '{0}/home.html'.format(APP_NAME), context)
