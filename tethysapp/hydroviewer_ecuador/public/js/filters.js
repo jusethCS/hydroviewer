@@ -30,7 +30,7 @@ let loc = [
     { name: "Tungurahua", file:"tungurahua.geojson"},
     { name: "Zamora Chinchipe", file:"zamora_chinchipe.geojson"},
 ];
-const loc_url = `${server}/static/historical_validation_tool_ecuador/geojson/loc/`
+const loc_url = `${server}/static/hydroviewer_ecuador/geojson/loc/`
 
 
 // River basin districts

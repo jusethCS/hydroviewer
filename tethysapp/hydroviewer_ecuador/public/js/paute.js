@@ -1,6 +1,3 @@
- // ------------------------------------------------------------------------------------------------------------ //
-//                                             HTML FOR FLOOD ALERT                                             //
-// ------------------------------------------------------------------------------------------------------------ //
 const pauteHTML = `<div class="control control-group">
                             <div class="alert-panel-checkbox">
                                 <div class="form-check form-switch">
@@ -16,3 +13,39 @@ const pauteHTML = `<div class="control control-group">
 
 // Add HTML into the control panel
 $("#paute")[0].innerHTML = pauteHTML;
+
+
+fetch(`${server}/static/hydroviewer_ecuador/geojson/cuenca_paute.geojson`)
+    .then((response) => (layer = response.json()))
+    .then((layer) => {
+        cuenca_paute = L.geoJSON(layer, { style: {color: "#000000", weight: 2.5, fillOpacity: 0.1} })
+    });
+
+fetch(`${server}/static/hydroviewer_ecuador/geojson/subcuencas_paute.geojson`)
+    .then((response) => (layer = response.json()))
+    .then((layer) => {
+        subcuencas_paute = L.geoJSON(layer, { style: {color: "#000000", weight: 1.5, fillOpacity: 0.1} })
+    });
+
+
+$('#cpaute').on('change', function () {
+    if($('#cpaute').is(':checked')){
+        cuenca_paute.addTo(map);
+        map.fitBounds(cuenca_paute.getBounds());
+    } else {
+        map.removeLayer(cuenca_paute); 
+    };
+});
+
+$('#scpaute').on('change', function () {
+    if($('#scpaute').is(':checked')){
+        subcuencas_paute.addTo(map);
+        map.fitBounds(subcuencas_paute.getBounds());
+    } else {
+        map.removeLayer(subcuencas_paute); 
+    };
+});
+
+
+
+
