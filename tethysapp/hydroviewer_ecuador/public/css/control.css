@@ -125,6 +125,13 @@
     background-color: #3F4850;
 }
 
+.form-switch #cpuate:checked {
+    background-color: #0F71C5;
+}
+
+.form-switch #scpuate:checked {
+    background-color: #0F71C5;
+}
 
 .table-warning {
     border-collapse: collapse;
