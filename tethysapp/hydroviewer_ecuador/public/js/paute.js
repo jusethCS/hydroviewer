@@ -8,6 +8,10 @@ const pauteHTML = `<div class="control control-group">
                                     <input class="form-check-input" type="checkbox" id="scpaute">
                                     <label class="form-check-label" for="scpaute">Subcuencas del río Paute</label>
                                 </div>
+                                <div class="form-check form-switch">
+                                    <input class="form-check-input" type="checkbox" id="embalses">
+                                    <label class="form-check-label" for="embalses">Embalses</label>
+                                </div>
                             </div>
                             <br>`;
 
