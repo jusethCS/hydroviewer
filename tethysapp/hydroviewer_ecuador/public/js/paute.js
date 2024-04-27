@@ -31,6 +31,11 @@ fetch(`${server}/static/hydroviewer_ecuador/geojson/subcuencas_paute.geojson`)
         subcuencas_paute = L.geoJSON(layer, { style: {color: "#000000", weight: 1.5, fillOpacity: 0.1} })
     });
 
+fetch(`${server}/static/hydroviewer_ecuador/geojson/embalses.geojson`)
+    .then((response) => (layer = response.json()))
+    .then((layer) => {
+        embalses = L.geoJSON(layer)
+    });
 
 $('#cpaute').on('change', function () {
     if($('#cpaute').is(':checked')){
@@ -47,6 +52,15 @@ $('#scpaute').on('change', function () {
         map.fitBounds(subcuencas_paute.getBounds());
     } else {
         map.removeLayer(subcuencas_paute); 
+    };
+});
+
+$('#embalses').on('change', function () {
+    if($('#embalses').is(':checked')){
+        embalses.addTo(map);
+        map.fitBounds(embalses.getBounds());
+    } else {
+        map.removeLayer(embalses); 
     };
 });
 
