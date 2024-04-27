@@ -7,6 +7,5 @@ sudo chown -R www-data: /home/ubuntu/static && sudo chown -R www-data: /home/ubu
 
 
 # Crear el ambiente
-mamba create -n tethys -c conda-forge -c tethysplatform tethys-platform=4.* geoglows=0.27.0
-mamba install geopandas
+mamba create -n tethys -c conda-forge -c tethysplatform tethys-platform=4.* geoglows=0.27.0 pandas=1.5.2 geopandas=0.14.0 python=3.9.*
 pip install pandas-geojson==1.2.0

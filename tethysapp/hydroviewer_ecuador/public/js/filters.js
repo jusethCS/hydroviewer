@@ -46,7 +46,7 @@ let basin = [
     { name: "Demarcación Puyango-Catamayo", file:"puyango_catamayo.geojson"},
     { name: "Demarcación Santiago", file:"santiago.geojson"},
 ];
-const basin_url = `${server}/static/historical_validation_tool_ecuador/geojson/basin/`
+const basin_url = `${server}/static/hydroviewer_ecuador/geojson/basin/`
 
 
 
